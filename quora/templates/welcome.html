@@ -1,0 +1,74 @@
+{% extends 'base.html' %} <!-- This extends the base.html -->
+
+<!-- This file extends the base file -->
+<!-- In this file we don't need to rewrite the HTML structure -->
+<!-- We just fill-in our information in the blocks defined in the base file -->
+
+{% block title %} Welcome Page {% endblock %}
+{% block style %}
+
+			* {
+				/*
+				margin: 0;
+				padding: 0;
+				*/
+			}
+
+			a {
+				color: lightcoral; /* This is a CSS comment. */
+				font-weight: 700;
+			}
+
+			a:hover {
+				color: goldenrod;
+			  }
+
+			.heading {
+				color: cornflowerblue;
+			}
+
+			#first {
+				color: coral;
+			}
+
+			ul > li {
+				color: cornflowerblue;
+			}
+{% endblock %}
+
+{% block content %}
+		<h1 id="first" class="heading" align="center"> Welcome Page </h1>
+		<br>
+		<h2 class="heading" align="center"> Welcome Page </h2>
+		<br><br><br>
+		<h3 style="color: hotpink; border: 1px solid blue;" class="heading" align="center"> Welcome Page </h3>
+		<h4 class="heading" align="center"> Welcome Page </h4>
+		<h5 class="heading" align="center"> Welcome Page </h5>
+		<h6 class="heading" align="center"> Welcome Page </h6>
+		
+		<p>
+			This is a paragraph.
+		</p>
+		
+		
+		<p>
+			This is also a paragraph.<a href="{% url 'abc' %}">Link</a>
+		</p>
+		<p>
+			This is third paragraph.
+		</p>
+
+		<!-- Nested List -->
+		<ul>
+			Unordered List:
+			<li>Item 1</li> <!-- List Item -->
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+			Ordered but nested list:
+			<ol>
+				<li>Item A</li>
+			</ol>
+		</ul>
+		
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Welcome Page</title>
+		<!-- This is an HTML comment -->
+
+		<style>
+			/* This is a CSS comment. */
+			
+			/* All elements selector */
+			* {
+				/* border: 1px dotted black; */
+			}
+
+			/* Tag Name selector */
+			a {
+				color: pink;
+				font-weight: 700;
+			}
+
+			a:hover {
+				color: yellow;
+			  }
+
+			/* Class selector */
+			.heading {
+				color: red;
+			}
+
+			/* ID selector */
+			#first {
+				color: green;
+			}
+
+			/* Immediate Children selector */
+			ul > li {
+				color: blue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1 id="first" class="heading" align="center"> ABC Page </h1>
+
+		<!-- This is how we use variables in template -->
+		<p> Context Variables: {{ username }} {{num}} {{num}} {{num}} {{num}} {{num}} {{num}} </p>
+
+		<!-- url is a predefined template tag that takes a url 'name' variable and replaces the placeholder with the reverse mapped url Eg. http://localhost:8000/pattern  -->
+		<p> Go back to <a href="{% url 'welcome' %}">Welcome Page</a></p>
+			
+	</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			{% block title %} {% endblock %}
+		</title>
+		<!-- This is an HTML comment -->
+		<style>
+			{% block style %} {% endblock %}
+		</style>
+	</head>
+
+	<body>
+		{% block content %} {% endblock %}
+	</body>
+
+</html>
+
+<!-- This is base.html that defines the base html structure that we are required to implement -->
+<!-- All other templates can 'extend' this file and overwrite the block values to pass in their respective info -->
