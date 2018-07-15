@@ -1,0 +1,8 @@
+1. Create Project
+django-admin startproject <proj_name>
+
+2. Update TIME_ZONE in project's settings
+	- Change 'UTC' to 'Asia/Kolkata'
+
+3. Start an app
+	- python manage.py startapp <app_name>
