@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+
+    <h1> Welcome to our zomato app </h1>
+
+    <h3> Navigation </h3>
+
+    <ul>
+        <li> <a href="{% url 'restaurants' %}"> Restaurants </a> </li>
+        <li> <a href="{% url 'addRestaurants' %}"> Add Restaurant </a> </li>
+    </ul>
+
+{% endblock %}
