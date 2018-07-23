@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+
+    Name: {{ author.name|upper }}<br />
+    Marital Status: {{ author.get_marital_status_display }}<br />
+    Books:
+    <ul>
+        {% for book in author.book_set.all %}
+
+            <li>{{ book.name }}</li>
+
+        {% endfor %}
+    </ul> 
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+
+    somename: {{ name }}
+
+
+    Name: {{ book.name }}<br />
+    Description: {{ book.description }}<br />
+    Authors:
+    <ul>
+        {% for author in book.authors.all %}
+
+            <li>{{ author.name }}</li>
+
+        {% endfor %}
+    </ul> 
+    Publisher: {{ book.publisher.name }}
+
+{% endblock %}

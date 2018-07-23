@@ -2,10 +2,11 @@
 
 {% block body %}
 
-    Name: {{ restaurant.name }}<br>
-    Address: {{ restaurant.address }}<br>
-    Open Time: {{ restaurant.open_time }}<br>
-    Close Time: {{ restaurant.close_time }}<br>
+    {% for field_name, field_value in restaurant.get_fields %}
+
+        {{ field_name }}: {{ field_value }}<br>
+
+    {% endfor %}
 
     Average Rating: {{ restaurant.get_rating }}
 
@@ -31,7 +32,11 @@
         
         {% csrf_token %}
 
-        {{ form.as_p }}
+        <table>
+
+            {{ form.as_table }}
+
+        </table>
 
         <button type="submit">Submit</button>
 

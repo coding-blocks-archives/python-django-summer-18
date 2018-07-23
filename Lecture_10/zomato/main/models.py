@@ -10,6 +10,13 @@ class Restaurant(models.Model):
     open_time = models.TimeField()
     close_time = models.TimeField()
 
+    def get_fields(self):
+        fields = [ field for field in self._meta.get_fields() if field.name not in [ "id", "review" ]]
+
+        for f in fields:
+            yield f.name, getattr(self, f.name)
+
+
     def get_rating(self):
         return self.review_set.aggregate(Avg('rating'))['rating__avg']
 

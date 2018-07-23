@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+
+    <form action="" method="post">
+
+        {% csrf_token %}
+
+        {% for field in form %}
+
+            <p>
+
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+            </p>
+
+        {% endfor %}
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+{% endblock %}
