@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+
+    <h1> Restaurants </h1>
+
+    <ul>
+
+    {% for restaurant in query_set %}
+
+        <li> 
+            <a href="{% url 'restaurant' pk=restaurant.pk %}"> {{ restaurant.name }} </a> ( Average Rating: {{ restaurant.get_rating }} ) 
+        </li>
+
+    {% endfor %}
+
+    </ul>
+
+{% endblock %}

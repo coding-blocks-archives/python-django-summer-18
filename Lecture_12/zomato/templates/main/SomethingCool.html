@@ -1,0 +1,50 @@
+{% extends 'main/base.html' %}
+
+{% block head %}
+
+<script type="text/javascript">
+    $(document).ready(() => {
+        M.textareaAutoResize($('#id_content'));
+    })
+</script>
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+        {{ restaurant }}
+
+        <ul>
+            {% for review in restaurant.review_set.all %}
+
+                <li> {{ review }} </li>
+
+            {% endfor %}
+        </ul>
+
+        <form action="" method="post" class="row">
+
+            {% csrf_token %}
+
+            {% for field in form %}
+
+                <div class = "input-field col s3">
+
+                    {{ field }}
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+
+                </div>
+
+            {% endfor %}
+
+            <div class="col s4">
+                <button type="submit" class="waves-effect waves-light btn">Submit</button>
+            </div>
+
+        </form>
+
+    </div>
+
+{% endblock %}

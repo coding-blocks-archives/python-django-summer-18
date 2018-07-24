@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+
+    Name: {{ publisher.name }}<br />
+    Published Books:
+    <ul>
+        {% for book in publisher.book_set.all %}
+
+            <li>{{ book.name }}</li>
+
+        {% endfor %}
+    </ul> 
+
+{% endblock %}

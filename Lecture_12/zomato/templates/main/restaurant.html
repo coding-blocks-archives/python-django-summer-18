@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+
+    {% for field_name, field_value in restaurant.get_fields %}
+
+        {{ field_name }}: {{ field_value }}<br>
+
+    {% endfor %}
+
+    Average Rating: {{ restaurant.get_rating }}
+
+    <h2> Reviews </h2>
+
+    <ul>
+
+        {% for review in restaurant.review_set.all %}
+
+            <li> <a target="_blank" href="{% url 'review' id=review.pk %}"> {{ review.title }} - {{ review.get_stars }} </a> </li>
+
+        {% endfor %}
+
+    </ul>
+
+    {% if success %}
+        <p> Restaurant review Added </p>
+    {% endif %}
+
+    <h2> Add Review </h2>
+
+    <form action="" method="POST">
+        
+        {% csrf_token %}
+
+        <table>
+
+            {{ form.as_table }}
+
+        </table>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+{% endblock %}

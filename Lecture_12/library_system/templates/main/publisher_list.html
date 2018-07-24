@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+
+    <h2>All the Publishers</h2>
+
+    <ul>
+
+        {% for publisher in publishers %}
+
+            <li>{{ publisher.name }}</li>
+
+        {% endfor %}
+
+    </ul>
+
+{% endblock %}

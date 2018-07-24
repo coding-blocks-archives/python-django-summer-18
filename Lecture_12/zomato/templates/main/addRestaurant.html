@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+
+    <form action="" method="POST">
+
+        {% csrf_token %}
+
+        {{ rest_form.as_p }}
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+{% endblock %}

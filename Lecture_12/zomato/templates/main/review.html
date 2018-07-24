@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+
+    <h2>Review</h2>
+    <h3>{{ review.title }}</h3>
+    <ul>
+        <li>Author: {{ review.author }}</li>
+        <li>Content: {{ review.content }}</li>
+        <li>Rating: {{ review.get_stars }}</li>
+    </ul>
+
+{% endblock %}
