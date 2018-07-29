@@ -32,6 +32,11 @@ class Review(models.Model):
         MaxValueValidator(5),
         MinValueValidator(0)
     ])
+    phone_numbers = models.TextField(null = True)
+
+    def get_phone_numbers(self):
+        for phone_number in phone_numbers.strip().split('\n'):
+            yield phone_number.strip()
 
     def get_stars(self):
         return "* "*self.rating

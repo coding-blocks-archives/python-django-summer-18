@@ -14,7 +14,7 @@
 
     <div class="container">
 
-        {{ restaurant }}
+        {{ restaurant.name|upper }}
 
         <ul>
             {% for review in restaurant.review_set.all %}
